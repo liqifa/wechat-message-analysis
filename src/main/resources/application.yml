@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: wechat-analysis
+
+### custom properties
+wechat:
+  contact:
+    datasource:
+      jdbc-url: jdbc:sqlite:///Users/Zach/Downloads/wechat/DB/WCDB_Contact.sqlite
+      hikari:
+        driver-class-name: org.sqlite.JDBC
+        
+  message:
+    datasource:
+      jdbc-url: jdbc:sqlite:///Users/Zach/Downloads/wechat/DB/MM.sqlite
+      hikari:
+        driver-class-name: org.sqlite.JDBC
+        
+elasticsearch:
+  hosts:
+    - http://localhost:9200
+  connectTimeout: 10000
+  connectionRequestTimeout: 10000
+  socketTimeout: 10000
+  maxRetryTimeoutMillis: 60000
+  clientUsername: 
+  clientPassword: 

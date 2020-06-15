@@ -1,0 +1,3 @@
+comming soon...
+大概思路是将iphone微信聊天记录导出后，读取 `WCDB_Contact` 与 `MM` 数据且合并，使用 Elasticsearch 异步 api 批量索引，然后利用 kibana 自己配制统计数据。
+`message.md` 中存放的是索引后微信聊天记录的索引表 及 一些简单查询报表

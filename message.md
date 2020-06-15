@@ -79,3 +79,36 @@ PUT message
   }
 }
 ```
+
+```
+### 查看自己频率最高的一句话
+GET message/_search?size=0
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "type": "1" ##1为自己发的消息，0为接收对方消息
+          }
+        }
+      ],
+      "must_not": [
+        {
+          "match": {
+            "friendType": "2" ##2为群聊天
+          }
+        }
+      ]
+    }
+  }, 
+  "aggs": {
+    "ofenword": {
+      "terms": {
+        "field": "message.keyword",
+        "size": 10
+      }
+    }
+  }
+}
+```
